@@ -24,6 +24,11 @@ btnCheck.addEventListener("click", function () {
     showSecretNumber.textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
     showSecretNumber.style.width = "30rem";
+    if (score > highScore) {
+      highScore = score;
+      showHighScore.textContent = highScore;
+    }
+
     // When user guess is too high
   } else if (userInput > secretNumber) {
     if (score > 1) {
