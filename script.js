@@ -21,9 +21,12 @@ btnCheck.addEventListener("click", function () {
   // When there is no input
   if (!userInput) {
     displayMessage("⛔ No Number!");
-
-    // When player wins
-  } else if (userInput === secretNumber) {
+    // when user enter the number other than 1 to 20
+  } else if (userInput < 1 || userInput > 20) {
+    displayMessage("❌ Please enter number between 1 to 20!");
+  }
+  // When player wins
+  else if (userInput === secretNumber) {
     displayMessage("🎉 Correct Number!");
     showSecretNumber.textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
