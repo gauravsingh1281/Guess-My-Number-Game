@@ -5,8 +5,9 @@ const showScore = document.querySelector(".score");
 const showSecretNumber = document.querySelector(".number");
 const btnCheck = document.querySelector(".check");
 const showHighScore = document.querySelector(".highscore");
+const restartGame = document.querySelector(".again");
 const randomNo = () => Math.floor(Math.random() * 20) + 1;
-const secretNumber = randomNo();
+let secretNumber = randomNo();
 let score = 20;
 let highScore = 0;
 
@@ -22,7 +23,7 @@ btnCheck.addEventListener("click", function () {
     message.textContent = "🎉 Correct Number!";
     showSecretNumber.textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
-    document.querySelector(".number").style.width = "30rem";
+    showSecretNumber.style.width = "30rem";
     // When user guess is too high
   } else if (userInput > secretNumber) {
     if (score > 1) {
@@ -47,4 +48,16 @@ btnCheck.addEventListener("click", function () {
   } else {
     message.textContent = "❌ Invalid Input!";
   }
+});
+
+// restart game
+restartGame.addEventListener("click", function () {
+  secretNumber = randomNo();
+  score = 20;
+  document.querySelector(".guess").value = "";
+  showScore.textContent = score;
+  message.textContent = "Start guessing...";
+  showSecretNumber.textContent = "?";
+  document.querySelector("body").style.backgroundColor = "#222";
+  showSecretNumber.style.width = "15rem";
 });
