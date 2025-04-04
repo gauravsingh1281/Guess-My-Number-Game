@@ -9,7 +9,6 @@ const randomNo = () => Math.floor(Math.random() * 20) + 1;
 const secretNumber = randomNo();
 let score = 20;
 let highScore = 0;
-showSecretNumber.textContent = secretNumber;
 
 btnCheck.addEventListener("click", function () {
   const userInput = Number(document.querySelector(".guess").value);
@@ -21,8 +20,7 @@ btnCheck.addEventListener("click", function () {
     // When player wins
   } else if (userInput === secretNumber) {
     message.textContent = "🎉 Correct Number!";
-    score++;
-    showScore.textContent = score;
+    showSecretNumber.textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
     // When user guess is too high
