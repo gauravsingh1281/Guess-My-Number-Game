@@ -46,5 +46,5 @@ https://github.com/user-attachments/assets/53c90748-9117-421a-b556-ef9ac1fdc9b1
 
 ---
 
-## 🧪 How to Play 
+## 🎮 How to Play 
 - Live URL : https://dynamic-jalebi-a695d1.netlify.app/
